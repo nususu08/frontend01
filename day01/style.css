@@ -1,0 +1,57 @@
+body,
+h1,
+button {
+  all: unset;
+}
+/* 모든 마진, 이펙트 굵기 크기 등등을 초기화 시킴 */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ddd;
+}
+
+.stopwatch {
+  display: inline-block;
+  padding: 48px 20px 72px 32px;
+  background-color: #fff;
+  border: 1.5px solid #aaa;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
+  padding-top: 25px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+}
+
+.stopwatch h1 {
+  display: block;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 0.5em;
+  text-transform: uppercase;
+  color: gray;
+  margin-bottom: 8px;
+}
+
+.stopwatch_interface {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#screen {
+  padding: 9px 10px;
+  font-family: "Press Start 2P", system-ui;
+  color: #fff;
+  background-color: black;
+  border-radius: 2px;
+}
+
+#button {
+  padding: 5.5px 10px;
+  color: #fff;
+  background-color: rgb(50, 50, 199);
+  border-radius: 2px;
+  cursor: pointer;
+}
