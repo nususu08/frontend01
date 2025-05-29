@@ -4,6 +4,14 @@ button {
   all: unset;
 }
 /* 모든 마진, 이펙트 굵기 크기 등등을 초기화 시킴 */
+/* 
+태그 선택자
+클래스 선택자 .
+아이디 선택자 #
+
+태그 클래스 아이디
+
+*/
 
 body {
   display: flex;
@@ -11,6 +19,13 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #ddd;
+}
+
+#button.stop-color {
+  background-color: tomato;
+}
+
+.play-color {
 }
 
 .stopwatch {
@@ -51,7 +66,7 @@ body {
 #button {
   padding: 5.5px 10px;
   color: #fff;
-  background-color: rgb(50, 50, 199);
+  background-color: steelblue;
   border-radius: 2px;
   cursor: pointer;
 }
