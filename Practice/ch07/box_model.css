@@ -1,0 +1,19 @@
+span {
+  background-color: slateblue;
+}
+.container {
+  background-color: #fff;
+}
+.container div {
+  background-color: coral;
+  display: inline;
+  width: 200px;
+}
+
+.container :first-child {
+  color: red;
+}
+
+.container :nth-child(2) {
+  color: red;
+}
