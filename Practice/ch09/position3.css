@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  color: #fff;
+  background-color: gray;
+}
+
+header h1 {
+  font-size: 1.7em;
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 300vh;
+  margin-top: 90px;
+}
+
+.one {
+  width: 60%;
+  height: 100vh;
+}
+
+.one > img {
+  display: block;
+  width: 100%;
+}
+
+.two {
+  width: 40%;
+  overflow: auto;
+  position: sticky;
+  height: 50vh;
+  top: 0;
+  padding: 70px 0 0 12px;
+  background-color: aliceblue;
+}
+
+.three {
+  position: sticky;
+  top: 0;
+  background-color: beige;
+  height: 200px;
+  padding-top: 100px;
+}
