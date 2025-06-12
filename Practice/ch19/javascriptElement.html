@@ -7,11 +7,11 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>jsremove.htmls</h1>
+    <h1>jsadit1.htmls</h1>
     <section class="plant">
       <h2 id="vegetable_title">채소</h2>
       <ul>
-        <li>당근</li>
+        <li class="organic">당근</li>
         <li>오이</li>
         <li>상추</li>
         <li>가지</li>
@@ -26,7 +26,7 @@
         <li>포도</li>
       </ul>
     </section>
-    <section id="meat">
+    <section>
       <h2>고기</h2>
       <ul>
         <li class="soldout">소고기</li>
@@ -36,27 +36,13 @@
     </section>
 
     <script>
-      const $vegetableTilte = document.querySelector("#vegetable_title");
-      $vegetableTilte.remove();
-      console.log("$vegetableTtile: ", $vegetableTilte);
+      const $fruit_ul = document.querySelector("#sweets > ul");
 
-      const $selfH2Tag = document.createElement("h2");
-      $selfH2Tag.textContent = "내가 만든 h2";
-
-      // const $firstSection = document.querySelector("section");
-      // $firstSection.prepend($vegetableTilte);
-
-      const $secondSection = document.querySelector("#sweets");
-      $secondSection.append($vegetableTilte);
-      $secondSection.append($selfH2Tag);
-
-      $secondSection.children[0].remove();
-
-      const $meats = document.querySelector("#meat ul");
-      const children = $meats.children;
-
-      for (let i = children.length - 1; i >= 0; i--) {
-        children[i].remove();
+      const fruits = ["수박", "블루베리", "키위", "참외", "자두"];
+      for (const item of fruits) {
+        const ele_li = document.createElement("li");
+        ele_li.textContent = item;
+        $fruit_ul.append(ele_li);
       }
     </script>
   </body>
