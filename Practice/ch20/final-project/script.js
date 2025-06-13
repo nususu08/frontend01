@@ -53,3 +53,14 @@ aboutCards.forEach((item, idx) => {
   </p>`;
   $aboutDiv.append($div);
 });
+
+const $currLiList = document.querySelectorAll(".curriculum__list > li");
+const $currProBar = document.querySelector(".curriculum__progress .bar");
+
+$currLiList.forEach((item, idx) => {
+  item.addEventListener(
+    "mouseenter",
+    () => ($currProBar.style.width = `${200 * idx}px`)
+  );
+  item.addEventListener("mouseleave", () => ($currProBar.style.width = 0));
+});
