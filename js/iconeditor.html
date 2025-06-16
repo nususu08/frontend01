@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ICON EDITOR</h1>
+    <div id="editor"></div>
+    <script>
+        function makElement(name, attributes) {
+            const node = document.createElement(name);
+            if (attributes) {
+                for (const attr in attributes) {
+                    if (node.hasOwnProperty(attr)) {
+                        node.setAttribute(attr, attributes[attr])
+                    }
+                }
+            }
+            return node;
+        }
+        function createIconEditor(target, nx, ny) {
+            const $inputColor = makElement("input", { type: "color" })
+            target.appendChild($inputColor)
+
+            const $inputButtonClear = makElement("input", { type: "button", value: "Clear" })
+            target.appendChild($inputButtonClear)
+
+            const $table = makElement("table")
+            $table.style.borderCollapse = "collapse"
+            $table.style.marginTop = "5px";
+
+            for (let y = 0; y < ny; y++) {
+                const $tr = makElement("tr")
+                $table.appendChild($tr)
+                for (let x = 0; x < nx; x++) {
+                    const $td = makElement("td")
+                    $td.style.width = $td.style.height = "15px"
+                    $td.style.border = "1px solid gray"
+                    $tr.appendChild($td)
+                }
+            }
+            target.appendChild($table);
+        }
+
+        // 뷰포트 화면 구성이 끝나면 호출, LifeCycle
+        window.addEventListener("load", () => {
+            console.log("window.load 이벤트")
+            createIconEditor(document.querySelector("#editor"), 20, 20)
+        })
+    </script>
+
+</body>
+
+</html>
