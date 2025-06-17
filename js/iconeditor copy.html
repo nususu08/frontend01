@@ -63,7 +63,8 @@
                 for (let x = 0; x < nx; x++) {
                     const $td = makElement("td")
                     $tr.appendChild($td)
-                    $td.addEventListener("click", () => { $td.style.backgroundColor = $inputColor.value })
+                    $td.addEventListener("click", () => { $td.style.backgroundColor = !$td.style.backgroundColor ? $inputColor.value : "" })
+
 
 
                 }
