@@ -9,6 +9,7 @@ const props = defineProps({
   <!-- :style 이것은 vue문법
      중괄호 2개 겹쳐져 있는 것은 콧수염(Mustache 템플릿) -->
   <div :style="{ color: props.color }">{{ props.color || "BLACK!!" }} TIRE</div>
+  <div style="background-color: blue; color: #fff">Black Tire</div>
 </template>
 
 <style scoped></style>

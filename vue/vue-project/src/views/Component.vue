@@ -4,13 +4,14 @@ import Realwheel from "@/components/RealWheel.vue";
 </script>
 
 <template>
-  <h1>Hello Vue!</h1>
-  <h1>Hello Vue!</h1>
-  <FrontWheel></FrontWheel>
-  <Realwheel></Realwheel>
-
+  <h1>Components.vue</h1>
   <div class="car">
     <FrontWheel />
+    <FrontWheel />
+  </div>
+
+  <div class="car">
+    <Realwheel />
     <Realwheel />
   </div>
 </template>

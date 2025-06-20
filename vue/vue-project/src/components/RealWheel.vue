@@ -5,7 +5,7 @@ import Tire from "./Tire.vue";
 <template>
   <div class="real-wheel">
     <span>REAl-WHEEL</span>
-    <Tire color="RED" />
+    <Tire color="Green" />
   </div>
 </template>
 
