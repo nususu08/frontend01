@@ -11,7 +11,7 @@ const refCtnts = useTemplateRef("ref_ctnts");
 
 const state = reactive({
   memo: {
-    memeoId: 0,
+    memoId: 0,
     title: "",
     ctnts: "",
     createdAt: "",
@@ -27,8 +27,6 @@ const submit = async () => {
     // state.memo.title.trim().length === 0
     refTitle.value.focus();
     alert("제목을 작성해 주세요");
-
-    return;
   } else if (state.memo.ctnts === "") {
     // state.memo.ctnts.trim().length === 0
     refCtnts.value.focus();
@@ -47,30 +45,30 @@ const submit = async () => {
   // if (arr.length > 20) {
   //   alert("20자 내외로 작성해주세요.");
   // }
-  const str = "22222";
 
   // 등록, 수정 처리인지 구분이 되어야 한다.
   console.log("submit 함수 호출");
-  if (route.params.memoId) {
-    // 수정 처리
-    return;
-  }
-
+  let data = null;
   const bodyJson = {
     title: state.memo.title,
     ctnts: state.memo.ctnts,
   };
-
-  const data = await httpService.save(state.memo);
+  if (route.params.memoId) {
+    // 수정 처리
+    bodyJson.memoId = state.memo.memoId;
+    data = await httpService.modify(bodyJson);
+  } else {
+    // 등록 처리
+    data = await httpService.save(state.memo);
+  }
   if (data.resultData === 1) {
-    // 등록 성공
+    // 등록/수정 성공
     // 홈화면을 라우터 처리
     router.push({ path: "/" });
   } else {
     // 등록 실패
     alert(data.resultMessage);
   }
-  // 등록 처리
 };
 
 onMounted(() => {
